@@ -1,0 +1,17 @@
+{
+  "schema_version": 4,
+  "runtime_roots": [],
+  "commands": {},
+  "capabilities": {
+    "network": ["www.w3.org"],
+    "filesystem": "repo",
+    "exec": "none",
+    "secrets": "none",
+    "env_read": [],
+    "prompt_scope": "Design, implement, migrate, and review Relux Works product websites using the shared product-family system."
+  },
+  "dependencies": {
+    "commands": {},
+    "skills": {}
+  }
+}

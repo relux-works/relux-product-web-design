@@ -1,0 +1,21 @@
+# Triggers (en)
+
+- Relux product website
+- product family design
+- internal product site
+- landing page design
+- website visual consistency
+- product design system
+- web typography
+- semantic color palette
+- dark mode website
+- responsive layout review
+- navigation design
+- RTL website
+- website accessibility review
+- WCAG 2.2 AA review
+- accessible authentication
+- axe-core accessibility gate
+- visual QA
+- migrate barycenter.live design
+- bring this site into the Relux style
