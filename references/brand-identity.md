@@ -135,6 +135,18 @@ default single-image platform avatar. Select the dark avatar only when that plat
 guarantees a dark presentation surface. Record any additional platform sizes in the
 product design contract.
 
+### LinkedIn Company Page cover
+
+Use `assets/relux-linkedin-company-cover.jpg` as the upload-ready cover and
+`assets/relux-linkedin-company-cover.svg` as its editable vector source. The artwork
+is 4200 × 700 px, RGB, and centered within the crop-safe middle of the canvas. Keep
+the flat Relux ink background and approved red-and-white outlined lockup unchanged.
+Do not add a tagline, extra mark, effect, or edge-aligned detail to this master.
+
+This is a LinkedIn Company Page cover, not the differently proportioned personal
+profile background image. Recheck LinkedIn's current specifications before deriving
+future platform assets.
+
 Build social images from approved outlined artwork. Keep it within platform-safe
 margins and render the exact text `Relux Works`; never ask image generation to
 redraw the mark or lettering. Use the same approved asset for `Organization.logo`
@@ -150,4 +162,6 @@ and other operator metadata whenever the consuming format accepts SVG.
   forced-color variants.
 - Check symbol rendering at 16, 24, and 32 CSS px.
 - Check the header, footer, favicon, avatar, structured data, and social image.
+- Check the LinkedIn Company Page cover at full resolution and at its rendered page
+  size; keep the lockup inside the centered safe area after responsive cropping.
 - Check left-to-right and right-to-left pages without mirroring the mark.

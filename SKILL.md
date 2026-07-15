@@ -225,6 +225,6 @@ Do not publish a redesign that only passes at one viewport, one locale, or one t
 - [quality-assurance.md](references/quality-assurance.md): required test matrix and
   geometry checks.
 - [tokens.css](assets/tokens.css): framework-neutral baseline token contract.
-- `assets/relux-*.svg`: approved light, dark, horizontal, symbol, and avatar artwork.
+- `assets/relux-*`: approved light, dark, horizontal, symbol, avatar, and social artwork.
 - [accessibility-statement.md](templates/accessibility-statement.md): public statement
   template for each released product.
