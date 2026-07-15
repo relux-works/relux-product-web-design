@@ -20,6 +20,8 @@ Before changing the design:
 - Read repository instructions and the product design contract.
 - Record the current routes, components, tokens, breakpoints, themes, languages,
   scripts, and directions.
+- Inventory every logo, wordmark, favicon, avatar, social image, operator metadata
+  field, and legacy identity token before replacing anything.
 - Run the existing build and test commands to distinguish prior failures from new
   regressions.
 - Preserve representative before screenshots for a migration or visual review.
@@ -87,6 +89,20 @@ const delta = await page.evaluate(() => {
 });
 ```
 
+### Identity artwork
+
+- Compare the shipped mark with `assets/relux-*.svg`; verify the exact `100 × 100`
+  symbol and `450 × 100` horizontal view boxes.
+- Verify the SVG uses filled paths with no live text, embedded image, stroke, gradient,
+  filter, mask, clipping debris, source ARIA, or duplicate ID.
+- Check at least one red-arm thickness of clear space (`10√2 ≈ 14.14` normalized
+  units) and the applicable minimum size.
+- Confirm the light artwork uses red and ink, the dark artwork uses red and white, and
+  product tokens cannot recolor either variant.
+- Confirm forced colors uses the bundled one-color asset and only its sanctioned
+  `CanvasText` runtime fill override.
+- Confirm the mark remains LTR-isolated and visually unchanged on every RTL route.
+
 ### Stable dimensions
 
 - Compare header and control boxes before and after route, locale, active, loading,
@@ -118,10 +134,14 @@ const delta = await page.evaluate(() => {
   screen-reader journeys. Automation does not validate task order, useful names,
   understandable errors, or correct live-region behavior.
 - Validate text and non-text contrast for every palette and surface combination.
+- Validate the exact brand token values separately from semantic UI contrast. Do not
+  use Relux red as ordinary text merely because it is the logo color.
 - Inspect 200% text zoom, 400% browser zoom, and increased browser default font size.
 - Inspect reduced motion, reduced transparency, increased contrast, and forced colors.
 - Check document language, mixed-language spans, labels, errors, status announcements,
   and alternative media.
+- Confirm a linked corporate mark has one accessible name, `Relux Works`, and no
+  duplicate SVG title announcement.
 - Verify logical alignment, drawer direction, icon mirroring, mixed-direction
   identifiers, punctuation, and line height separately in Arabic, Persian, and Hebrew.
 - Use the longest real translations rather than artificial repeated characters.
@@ -208,6 +228,10 @@ review. A checklist without observed output is not test evidence.
 - Validate canonical and reciprocal `hreflang` links.
 - Confirm draft and preview routes are `noindex` and absent from public discovery files.
 - Check social image crops and actual product representation.
+- Compare the header, footer, favicon, avatar, `Organization.logo`, and social artwork
+  with the approved Relux SVGs and confirm their light/dark variants agree.
+- Check the generated 16/32/48 px ICO and 180 × 180 px Apple touch fallback against the
+  plated light avatar.
 - Check robots behavior for intended search and answer-system crawlers without broadly
   exposing private or low-quality routes.
 - Confirm `lastmod` and release dates represent meaningful changes.
@@ -222,12 +246,16 @@ Open screenshots at full size and review them as a composition:
 - Is part of the next section visible without creating an empty hero?
 - Are the header, headings, summaries, rows, actions, and footer on coherent axes?
 - Does the type hierarchy work without relying on accent color?
+- Does the approved outlined wordmark remain crisp and subordinate to the product at
+  its actual header/footer size?
 - Does dark mode preserve depth without glare, bright borders, or saturated large
   surfaces?
 - Is product expression visible without turning the page into a one-hue theme?
 - Are real interfaces and media legible rather than decorative?
 - Do translated labels wrap intentionally and keep controls stable?
 - Is motion quiet when the product is idle?
+- Are the symbol and lockup correct on light and dark backgrounds, in one color, in
+  forced colors, at 16/24/32 CSS px, and on an RTL page without mirroring?
 
 Inspect screenshots yourself. A nonblank image, a passing pixel threshold, or a clean
 accessibility scan does not establish professional visual hierarchy.
@@ -242,7 +270,10 @@ The change is complete only when:
 - WCAG 2.2 Level AA exceptions, if any, have an accessible alternative, owner,
   remediation date, and matching public disclosure; the product is not described as
   fully conformant while an exception remains.
-- Color tokens pass contrast validation and contain no pure black or pure white.
+- Semantic interface tokens pass contrast validation and contain no pure black or pure
+  white. Approved knockout logo artwork may use the fixed `#FFFFFF` brand token.
+- Corporate artwork passes path-integrity, minimum-size, clear-space, theme, metadata,
+  and RTL checks.
 - Required viewport, appearance, direction, locale, and interaction coverage is done.
 - Automated geometry checks and visual screenshot review both pass.
 - Visible and machine-readable facts agree.

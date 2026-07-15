@@ -27,20 +27,23 @@ Keep these consistent across all internal product websites:
 
 1. **Type roles.** Inter Tight for display, Inter for body and interface text, and
    Roboto Mono for technical labels and code, with script-appropriate fallbacks.
-2. **Semantic color architecture.** Components consume role tokens such as text,
+2. **Corporate identity.** Use the approved Relux symbol and outlined lockup from
+   [brand-identity.md](brand-identity.md). Never retype, recolor, rearrange, or mirror
+   the fixed artwork.
+3. **Semantic color architecture.** Components consume role tokens such as text,
    surface, control, border, accent, link, success, warning, and error. They do not
    own arbitrary color literals.
-3. **Complete system states.** Light, dark, increased-contrast, reduced-motion,
+4. **Complete system states.** Light, dark, increased-contrast, reduced-motion,
    reduced-transparency, and forced-colors behavior are designed together.
-4. **Restrained geometry.** Clear bands, aligned grids, radii no larger than 8px by
+5. **Restrained geometry.** Clear bands, aligned grids, radii no larger than 8px by
    default, stable controls, and no cards nested inside cards.
-5. **Immediate interaction feedback.** Press states begin on pointer-down; ordinary
+6. **Immediate interaction feedback.** Press states begin on pointer-down; ordinary
    transitions are short, reversible, and never block input.
-6. **Editorial discipline.** Product statements are specific, technically accurate,
+7. **Editorial discipline.** Product statements are specific, technically accurate,
    and backed by real interfaces, artifacts, measurements, or provenance.
-7. **International structure.** Logical properties, script-aware typography, and
+8. **International structure.** Logical properties, script-aware typography, and
    independent RTL verification are part of the component model.
-8. **Measured quality.** Every release is checked across the shared viewport, theme,
+9. **Measured quality.** Every release is checked across the shared viewport, theme,
    input, language, and direction matrix.
 
 These invariants create family resemblance more reliably than a shared hero shape or
@@ -60,6 +63,9 @@ Choose these per product and record them in the repository:
 | Density | Editorial, standard, or operational | Spacing scale and alignment contract remain shared |
 | Domain motion | Playback, synchronization, spatial movement, live state | Motion communicates state; idle decoration stays still |
 | Voice | Vocabulary appropriate to the audience and domain | Tone remains direct, factual, and free of inflated claims |
+
+Keep product expression and operator identity separate. A product may own its mark and
+accent, but it must not redraw, recolor, or replace the approved Relux Works lockup.
 
 Do not change all expression slots at once. A product generally needs one dominant
 identity signal: its real interface, its domain imagery, or its accent. More signals
@@ -94,8 +100,9 @@ viewport. Do not use a marketing hero to delay entry into an operational tool.
   repeated objects, tools, or dialogs; they are not generic wrappers for sections.
 - Keep one dominant visual axis. Centered product media can coexist with left-aligned
   reading content, but unrelated centered stacks should not drift independently.
-- Treat the shared header and footer as relationship signals. State the product's
-  connection to Relux Works without making the studio brand louder than the product.
+- Treat the shared header and footer as relationship signals. Use the approved outlined
+  lockup when showing Relux Works, without making the studio brand louder than the
+  product.
 
 ## Barycenter and Pulsar migration
 
@@ -150,6 +157,7 @@ Before implementation, add a short design record to the product repository:
 - Accent and neutral tint:
 - Density:
 - Domain motion and its state meaning:
+- Relux Works relationship and lockup variant:
 - Supported themes, locales, and directions:
 - Intentional deviations from the family system:
 ```

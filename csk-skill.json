@@ -8,7 +8,7 @@
     "exec": "none",
     "secrets": "none",
     "env_read": [],
-    "prompt_scope": "Design, implement, migrate, and review Relux Works product websites using the shared product-family system."
+    "prompt_scope": "Design, implement, migrate, and review Relux Works product websites using the approved corporate identity and shared product-family system."
   },
   "dependencies": {
     "commands": {},

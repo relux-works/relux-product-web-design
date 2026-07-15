@@ -71,6 +71,15 @@ A navigation menu is complete only when it supports:
 Use native disclosure semantics for a non-modal compact menu. Use a dialog pattern for
 a modal drawer; do not mix their keyboard contracts.
 
+## Brand artwork
+
+- Keep the Relux symbol and wordmark static.
+- Do not rotate, skew, morph, pulse, glow, draw on, or separate their elements.
+- Do not repurpose the chevron or northeast arrow as loading, progress, redirect, or
+  synchronization animation.
+- Apply linked-logo hover and focus feedback to its container or focus indicator; do
+  not alter the artwork's geometry, spacing, or relative colors.
+
 ## Gestures
 
 Add gestures only when they reduce effort for the product's primary workflow.

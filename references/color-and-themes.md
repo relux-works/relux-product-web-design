@@ -3,12 +3,13 @@
 ## Contents
 
 1. [Semantic model](#semantic-model)
-2. [Product palette workflow](#product-palette-workflow)
-3. [Theme requirements](#theme-requirements)
-4. [Contrast targets](#contrast-targets)
-5. [Dark mode](#dark-mode)
-6. [Materials and gradients](#materials-and-gradients)
-7. [Implementation rules](#implementation-rules)
+2. [Relux Works identity](#relux-works-identity)
+3. [Product palette workflow](#product-palette-workflow)
+4. [Theme requirements](#theme-requirements)
+5. [Contrast targets](#contrast-targets)
+6. [Dark mode](#dark-mode)
+7. [Materials and gradients](#materials-and-gradients)
+8. [Implementation rules](#implementation-rules)
 
 ## Semantic model
 
@@ -21,13 +22,52 @@ in `assets/tokens.css` includes:
 - Structure: `--color-border`, `--color-border-strong`, `--color-divider`.
 - Controls: `--color-control`, `--color-control-hover`, `--color-control-pressed`,
   `--color-control-text`, `--color-focus`.
-- Brand and navigation: `--color-accent`, accent state variants, `--color-link`, and
-  `--color-link-hover`.
+- Fixed identity: `--color-brand-red`, `--color-brand-ink`, and
+  `--color-brand-white`.
+- Product actions and navigation: `--color-accent`, accent state variants,
+  `--color-link`, and `--color-link-hover`.
 - Feedback: success, warning, error, and information roles.
 - Overlays: scrim, selection, material, and shadow roles.
 
 The semantic role must remain stable when its underlying color changes. A red product
 accent does not turn every validation error into a brand action.
+
+## Relux Works identity
+
+Keep the production identity separate from product expression:
+
+```css
+--color-brand-red: #F60D10;
+--color-brand-ink: #181A18;
+--color-brand-white: #FFFFFF;
+```
+
+These three values belong to the supplied Relux Works artwork and do not change per
+product. Brand white is an intentional knockout color, not a general interface
+surface. Product themes consume the semantic action, link, focus, and state tokens;
+they may replace those tokens only as a complete tested set and must never recolor the
+Relux Works mark.
+
+The baseline Relux semantic red ramp is:
+
+| Appearance | Accent | Hover / pressed | Link | Link hover | Focus |
+| --- | --- | --- | --- | --- | --- |
+| Light | `#C20A0C` | `#A80608` | `#A80608` | `#810406` | `#C20A0C` |
+| Dark | `#FF6961` | `#FF817B` | `#FF817B` | `#FF9A94` | `#FF817B` |
+| Light, more contrast | `#8F0406` | `#700204` | `#8F0406` | `#700204` | `#8F0406` |
+| Dark, more contrast | `#FFA29C` | `#FFB5B0` | `#FF9A92` | `#FFB5B0` | `#FF9A92` |
+
+Use matching soft and on-accent pairs: light `rgba(246, 13, 16, 0.09)` with
+`#F7F9F7`; dark `rgba(255, 105, 97, 0.15)` with `#151815`; light increased contrast
+`rgba(143, 4, 6, 0.14)` with `#F7F9F7`; and dark increased contrast
+`rgba(255, 162, 156, 0.20)` with `#111411`.
+
+Exact Relux red is not a text token. Its contrast is 3.88:1 on the light canvas and
+4.21:1 on white, below the 4.5:1 target for ordinary text. Reserve it for the logo and
+tested non-text geometry. The semantic accents remain at least 5.13:1 on baseline
+surfaces; increased-contrast variants remain at least 7.09:1 on their supported
+surfaces. Keep success green and warning and information colors functional rather
+than forcing every state into the brand ramp.
 
 ## Product palette workflow
 
@@ -49,7 +89,7 @@ testing them in the web product's typography, surfaces, and browser rendering.
 
 ### Example expression directions
 
-- **Relux Works studio:** neutral cool canvas, restrained red accent, teal link.
+- **Relux Works studio:** neutral cool canvas with the accessible semantic red ramp.
 - **Pulsar:** neutral canvas with a slight blue-violet tint, violet accent, optional
   warm gold for a specific media or live state.
 - **Developer infrastructure:** neutral or slightly cool canvas, blue or green accent,
@@ -97,6 +137,8 @@ Dark mode is separately art-directed:
   with a bright stroke.
 - Check imagery, logos, screenshots, syntax colors, focus, selection, and browser form
   controls independently.
+- Use the approved red-and-white logo variant on dark surfaces. Relux ink has only
+  about 1.06:1 contrast on the dark canvas and must not be used there.
 - Use `color-scheme: light dark` so native controls match the active system appearance.
 
 ## Materials and gradients
@@ -119,6 +161,8 @@ Translucency communicates a floating layer, not general polish.
 
 - Put literal colors only in the theme token layer, illustrations, and data-series
   definitions. Component styles reference semantic tokens.
+- Keep fixed brand tokens outside product override boundaries. Under forced colors,
+  map all three to `CanvasText` so the separated mark remains recognizable.
 - Use product overrides at a theme boundary such as `[data-product="pulsar"]`, not in
   individual button or card selectors.
 - Change a palette as a complete tested set. Never override only `--color-accent` and

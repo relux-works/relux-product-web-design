@@ -13,6 +13,11 @@ Use a small, explicit family of roles:
 Use `font-optical-sizing: auto` where supported and `font-synthesis: none`. Do not
 simulate missing bold or italic faces.
 
+This skill does not bundle font binaries. Before implementation, verify the project's
+licensed or open-source font files, package source, weights, subsets, preload strategy,
+and fallback behavior. Record any unavailable family in the design contract; do not
+silently fetch a font or rebuild the outlined corporate wordmark with a fallback.
+
 Recommended fallback groups:
 
 ```css
@@ -27,6 +32,15 @@ Recommended fallback groups:
 
 Apply script-specific fallbacks through `:lang()` rather than forcing one universal
 font file to cover every writing system.
+
+## Relux Works wordmark
+
+Treat the `Relux Works` wordmark as approved artwork, not a live type role. Use the
+outlined Inter Bold 700 lockup from [brand-identity.md](brand-identity.md) with its exact
+capitalization, kerning, and word spacing. Production SVGs use filled paths and contain
+no `<text>` element. Never recreate the wordmark with CSS, a system fallback, or Inter
+Tight. Keep licensed live type only as an editable source; use outlines wherever
+rendering must be deterministic.
 
 ## Fixed responsive scale
 

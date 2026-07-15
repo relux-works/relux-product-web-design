@@ -6,6 +6,7 @@ Treat every public surface as a view of one maintained fact model:
 
 - Visible product copy and prices.
 - Page title, description, canonical URL, and social metadata.
+- Approved operator logo, favicon, avatar, and social artwork.
 - Structured data and feeds.
 - Locale and market variants.
 - Documentation, release notes, and status pages.
@@ -30,6 +31,10 @@ Use the product name as a first-viewport signal and in the document title. Do no
 the relationship to Relux Works ambiguous, but keep the product as the primary brand
 on its own site.
 
+Represent the operator with approved Relux Works artwork from
+[brand-identity.md](brand-identity.md). Do not substitute a typed wordmark, recolored
+symbol, or image-generated approximation.
+
 ## Metadata and localization
 
 - Give every indexable page a specific title and description that agree with visible
@@ -41,6 +46,12 @@ on its own site.
 - Render local currency only when the pricing and commercial terms actually apply to
   that market. Include the currency code in visible text and structured data.
 - Keep structured offers synchronized mechanically with visible packages and prices.
+- Set `Organization.logo` to an approved standalone Relux Works asset when the format
+  accepts it. Keep the same operator identity in visible attribution and metadata.
+- Provide theme-aware SVG favicons plus the platform fallbacks the product supports.
+  Use approved plated avatars where a platform controls the crop or background.
+- Build social images from approved outlined artwork and the same maintained fact
+  model as the page. Never use live fallback type or generated logo geometry.
 - Use meaningful, stable URLs. Redirect retired paths and avoid duplicate parameter
   variants.
 - Derive `lastmod` from meaningful content history, not every build date.
@@ -120,10 +131,12 @@ without better evidence creates maintenance risk and inconsistent answers.
 
 - Visible facts, structured data, MCP/API output, documentation, and feeds agree.
 - Product and operator identity are unambiguous.
+- Header, footer, favicon, avatar, `Organization.logo`, and social artwork use the
+  correct approved mark, variant, crop, and text.
 - Canonical, locale, market, and currency semantics are correct.
 - Drafts and previews cannot be indexed accidentally.
 - Claims link to evidence or have been removed.
-- Social images show the actual product or domain object and remain readable in both
-  common crops.
+- Social images show the actual product or domain object, preserve the approved Relux
+  artwork, and remain readable in both common crops.
 - Privacy, terms, support, source, status, and security links exist only when accurate.
 - The accessibility statement and feedback channel are current and reachable.
