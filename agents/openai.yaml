@@ -1,4 +1,7 @@
 interface:
   display_name: "Relux Product Web Design"
   short_description: "Design and review consistent Relux Works product websites"
-  default_prompt: "Use $relux-product-web-design to design, implement, migrate, or review this product website using the Relux Works family system, including typography, semantic themes, responsive geometry, motion, WCAG 2.2 AA accessibility, RTL, evidence-led content, and visual QA."
+  icon_small: "./assets/relux-avatar-light.svg"
+  icon_large: "./assets/relux-avatar-light.svg"
+  brand_color: "#F60D10"
+  default_prompt: "Use $relux-product-web-design to apply the approved Relux Works logo and product-family identity to this website, including accessible themes, responsive geometry, RTL, evidence-led content, and visual QA."

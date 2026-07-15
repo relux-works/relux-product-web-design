@@ -2,27 +2,30 @@
 name: relux-product-web-design
 description: >
   Design, build, migrate, or review websites and web interfaces for Relux Works
-  products using the shared product-family system: typography, semantic color
-  tokens, light/dark/high-contrast themes, responsive grids, navigation, motion,
-  WCAG 2.2 AA accessibility, RTL, evidence-led copy, agent discoverability, and
-  visual QA.
+  products using the approved Relux Works logo and identity, shared typography,
+  semantic color tokens, light/dark/high-contrast themes, responsive grids,
+  navigation, motion, WCAG 2.2 AA accessibility, RTL, evidence-led copy, agent
+  discoverability, and visual QA.
   Use for product sites, landing pages, dashboards, documentation, design-system
   work, visual consistency reviews, dark mode, responsive layout, or bringing an
   existing product such as barycenter.live back into the Relux family. Russian
-  triggers include дизайн сайта, лендинг, единый стиль продуктов, типографика,
-  палитра, темная тема, верстка, сетка, шапка, навигация, RTL and визуальная проверка.
+  triggers include дизайн сайта, логотип, айдентика, лендинг, единый стиль продуктов,
+  типографика, палитра, темная тема, верстка, сетка, шапка, навигация, RTL and
+  визуальная проверка.
 ---
 
 # Relux Product Web Design
 
-Build a recognizable product family without cloning one site. Preserve shared
-typography, geometry, semantic behavior, accessibility, and editorial discipline;
-let each product own its accent, neutral tint, media, and domain-specific character.
+Build a recognizable product family without cloning one site. Preserve the approved
+Relux Works corporate mark, typography, geometry, semantic behavior, accessibility,
+and editorial discipline; let each product own its accent, neutral tint, media, and
+domain-specific character.
 
 ## Start with the repository
 
-- Inspect the stack, existing tokens, components, routes, locales, design assets,
-  tests, and project instructions before proposing visual changes.
+- Inspect the stack, existing tokens, components, routes, locales, logo, favicon,
+  social assets, metadata, tests, and project instructions before proposing visual
+  changes.
 - Identify the primary audience and choose a page archetype: product experience,
   product landing, operational tool, documentation, editorial content, or service
   page. Do not force every product into a marketing landing template.
@@ -34,16 +37,24 @@ Read [foundations.md](references/foundations.md) before changing the visual dire
 It defines family invariants, product expression slots, page archetypes, and the
 worked Barycenter/Pulsar migration example.
 
+Read [brand-identity.md](references/brand-identity.md) before changing any corporate
+mark, wordmark, header identity, favicon, avatar, social image, or operator metadata.
+
 ## Establish the design contract
 
 Before implementation, state the contract in working notes:
 
 - **Product promise:** the literal job the product performs.
 - **Primary experience:** what must be visible or usable in the first viewport.
-- **Family invariants:** typography, semantic token model, grid discipline,
-  restrained geometry, theme behavior, accessibility, and factual writing.
+- **Family invariants:** approved Relux Works artwork and colors, typography,
+  semantic token model, grid discipline, restrained geometry, theme behavior,
+  accessibility, and factual writing.
+- **Operator relationship:** where Relux Works appears, which lockup variant it uses,
+  and how it stays subordinate to the product identity.
 - **Expression slots:** product accent, neutral background tint, media, iconography,
   density, and domain-specific motion.
+- **Asset dependencies:** licensed font sources and weights, target platform icons,
+  fallbacks, and any required external production-logo variants.
 - **Proof:** the real interface, artifact, result, provenance, or operational state
   that makes the page credible.
 - **Validation matrix:** routes, widths, themes, languages, directions, and states.
@@ -52,6 +63,20 @@ If the product has no approved accent or media, choose a conservative starting p
 and make the choice explicit. Do not invent a decorative identity to fill space.
 
 ## Apply the family system
+
+### Brand identity
+
+- Copy an approved path-only SVG from `assets/`; never redraw, trace, retype, mirror,
+  or recolor the corporate mark.
+- Use the ink lockup on light surfaces and the white lockup on dark surfaces. Keep at
+  least one red-arm thickness of clear space.
+- Keep the corporate colors fixed at Relux red `#F60D10`, ink `#181A18`, and knockout
+  white `#FFFFFF`. Product expression must not modify these values.
+- Use the outlined horizontal wordmark in headers and footers. Do not rebuild it with
+  live type, including SVG `<text>`.
+- Keep linked logos named `Relux Works`, LTR-isolated, and unmirrored in RTL layouts.
+- Use the bundled one-color artwork for forced colors and apply only the sanctioned
+  `CanvasText` path-fill override from the identity reference.
 
 ### Typography and writing
 
@@ -73,8 +98,9 @@ and make the choice explicit. Do not invent a decorative identity to fill space.
   [tokens.css](assets/tokens.css) or map its roles into the project's token system.
 - Define complete light, dark, light-high-contrast, dark-high-contrast, and forced
   colors behavior. Dark mode is separately tuned, not an inversion.
-- Let products vary accent and neutral tint as a tested set. Do not vary typography,
-  layout mechanics, state semantics, or contrast requirements per product.
+- Let products vary semantic accent and neutral tint as a tested set. Do not vary the
+  corporate identity tokens, typography, layout mechanics, state semantics, or
+  contrast requirements per product.
 - Read [color-and-themes.md](references/color-and-themes.md) before choosing a palette
   or modifying dark mode.
 
@@ -108,7 +134,7 @@ and make the choice explicit. Do not invent a decorative identity to fill space.
 - Treat system theme, increased contrast, reduced motion, reduced transparency,
   forced colors, keyboard operation, zoom, and reflow as product states.
 - Build one logical LTR/RTL component system. Isolate URLs, code, email addresses,
-  currency codes, and other LTR identifiers inside RTL documents.
+  currency codes, other LTR identifiers, and the Relux Works mark inside RTL documents.
 - Read [accessibility-and-i18n.md](references/accessibility-and-i18n.md) whenever the
   work touches navigation, forms, overlays, themes, localization, or RTL.
 - Read and apply [wcag-2.2-aa.md](references/wcag-2.2-aa.md) for authentication,
@@ -118,6 +144,8 @@ and make the choice explicit. Do not invent a decorative identity to fill space.
 
 - Keep visible facts, metadata, structured data, feeds, machine catalogs, and APIs in
   agreement. Do not publish claims that cannot be verified.
+- Keep the approved operator logo consistent across favicons, social images,
+  structured data, and machine-facing catalogs.
 - Show product provenance, security, ownership, release status, or open-source evidence
   where it helps a user decide.
 - Read [discovery-and-trust.md](references/discovery-and-trust.md) for public product
@@ -145,6 +173,8 @@ Read and execute [quality-assurance.md](references/quality-assurance.md).
 - Inspect representative routes at 390, 768, 1440, and 1920 CSS pixels.
 - Check light, dark, increased-contrast, reduced-motion, and forced-colors behavior.
 - Check every supported script family; inspect each RTL language independently.
+- Compare the header, footer, favicon, avatar, metadata, and social artwork with the
+  approved SVGs; inspect the symbol at 16, 24, and 32 CSS pixels.
 - Verify header geometry, scrollbar stability, no horizontal overflow, no clipped
   controls, no text overlap, no layout shift, and no state-driven resizing.
 - Exercise navigation with keyboard, pointer, `Escape`, outside click, and rapid
@@ -156,7 +186,9 @@ Do not publish a redesign that only passes at one viewport, one locale, or one t
 ## Reject these patterns
 
 - One-note pages dominated by a single hue family.
-- Pure black or pure white interface colors.
+- Pure black or pure white semantic interface colors. Approved knockout logo artwork
+  is the explicit white exception.
+- Redrawn, retyped, stretched, mirrored, animated, or effect-treated Relux artwork.
 - Gradient orbs, bokeh, glow fields, or decorative glass as page structure.
 - Large empty heroes, split hero cards, or centered stacks with unrelated visual axes.
 - Rounded rectangles where a familiar icon is clearer; radii above 8px without a
@@ -172,6 +204,8 @@ Do not publish a redesign that only passes at one viewport, one locale, or one t
 
 ## Resource map
 
+- [brand-identity.md](references/brand-identity.md): approved artwork, fixed colors,
+  placement, minimum size, accessibility, favicons, and release checks.
 - [foundations.md](references/foundations.md): family identity, product freedom, page
   archetypes, Barycenter/Pulsar migration.
 - [typography-and-content.md](references/typography-and-content.md): type scale,
@@ -191,5 +225,6 @@ Do not publish a redesign that only passes at one viewport, one locale, or one t
 - [quality-assurance.md](references/quality-assurance.md): required test matrix and
   geometry checks.
 - [tokens.css](assets/tokens.css): framework-neutral baseline token contract.
+- `assets/relux-*.svg`: approved light, dark, horizontal, symbol, and avatar artwork.
 - [accessibility-statement.md](templates/accessibility-statement.md): public statement
   template for each released product.

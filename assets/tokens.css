@@ -2,11 +2,13 @@
   color-scheme: light dark;
 
   /* Typography */
-  --font-display: "Inter Tight", "Inter", "Noto Sans Arabic", "Noto Sans Hebrew",
-    "Noto Sans Armenian", "Noto Sans Georgian", system-ui, sans-serif;
-  --font-ui: "Inter", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans Armenian",
-    "Noto Sans Georgian", system-ui, sans-serif;
+  --font-display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --font-ui: "Inter", system-ui, sans-serif;
   --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  --font-arabic: "Noto Sans Arabic", "Inter", sans-serif;
+  --font-hebrew: "Noto Sans Hebrew", "Inter", sans-serif;
+  --font-armenian: "Noto Sans Armenian", "Inter", sans-serif;
+  --font-georgian: "Noto Sans Georgian", "Inter", sans-serif;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -36,6 +38,11 @@
   --motion-fast: 150ms;
   --motion-base: 220ms;
   --motion-ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Immutable Relux Works identity colors. Do not remap these per product. */
+  --color-brand-red: #F60D10;
+  --color-brand-ink: #181A18;
+  --color-brand-white: #FFFFFF;
 }
 
 /* Baseline Relux palette. Replace product expression colors as a complete tested set. */
@@ -47,7 +54,7 @@
   --color-surface-raised: #fafbfa;
   --color-surface-hover: #eef1ee;
 
-  --color-text: #171a17;
+  --color-text: #181a18;
   --color-text-muted: #4d554f;
   --color-text-faint: #626a64;
   --color-text-inverse: #f4f6f4;
@@ -59,29 +66,29 @@
   --color-control: #fafbfa;
   --color-control-hover: #eef1ee;
   --color-control-pressed: #e9ede9;
-  --color-control-text: #171a17;
-  --color-strong-action: #171a17;
+  --color-control-text: #181a18;
+  --color-strong-action: #181a18;
   --color-strong-action-hover: #303630;
   --color-on-strong-action: #f4f6f4;
 
-  --color-accent: #b7352b;
-  --color-accent-hover: #95291f;
-  --color-accent-pressed: #95291f;
-  --color-accent-soft: rgba(183, 53, 43, 0.09);
+  --color-accent: #c20a0c;
+  --color-accent-hover: #a80608;
+  --color-accent-pressed: #a80608;
+  --color-accent-soft: rgba(246, 13, 16, 0.09);
   --color-on-accent: #f7f9f7;
 
-  --color-link: #165f50;
-  --color-link-hover: #0d473c;
-  --color-focus: #165f50;
+  --color-link: #a80608;
+  --color-link-hover: #810406;
+  --color-focus: #c20a0c;
 
   --color-success: #1b7049;
   --color-warning: #765500;
-  --color-error: #b7352b;
+  --color-error: #b42318;
   --color-info: #165f80;
 
-  --color-selection-bg: #d4e8e1;
-  --color-selection-text: #171a17;
-  --color-scrim: rgba(23, 26, 23, 0.42);
+  --color-selection-bg: #f3d1d0;
+  --color-selection-text: #181a18;
+  --color-scrim: rgba(24, 26, 24, 0.42);
   --color-material: rgba(250, 251, 250, 0.82);
   --shadow-overlay: 0 18px 45px rgba(20, 24, 20, 0.14);
 }
@@ -119,17 +126,17 @@
     --color-accent-soft: rgba(255, 105, 97, 0.15);
     --color-on-accent: #151815;
 
-    --color-link: #63d6c2;
-    --color-link-hover: #8ce4d4;
-    --color-focus: #63d6c2;
+    --color-link: #ff817b;
+    --color-link-hover: #ff9a94;
+    --color-focus: #ff817b;
 
     --color-success: #67e39d;
     --color-warning: #f0b35c;
     --color-error: #ff817b;
     --color-info: #64d2ff;
 
-    --color-selection-bg: #315f55;
-    --color-selection-text: #edf1ed;
+    --color-selection-bg: #742c29;
+    --color-selection-text: #f0f3f0;
     --color-scrim: rgba(7, 10, 7, 0.62);
     --color-material: rgba(28, 33, 28, 0.84);
     --shadow-overlay: 0 18px 48px rgba(7, 10, 7, 0.48);
@@ -163,22 +170,22 @@
     --color-strong-action-hover: #252b25;
     --color-on-strong-action: #f7f9f7;
 
-    --color-accent: #882018;
-    --color-accent-hover: #6f150f;
-    --color-accent-pressed: #6f150f;
-    --color-accent-soft: rgba(136, 32, 24, 0.14);
+    --color-accent: #8f0406;
+    --color-accent-hover: #700204;
+    --color-accent-pressed: #700204;
+    --color-accent-soft: rgba(143, 4, 6, 0.14);
     --color-on-accent: #f7f9f7;
 
-    --color-link: #0b5042;
-    --color-link-hover: #073b31;
-    --color-focus: #0b5042;
+    --color-link: #8f0406;
+    --color-link-hover: #700204;
+    --color-focus: #8f0406;
 
     --color-success: #0c5333;
     --color-warning: #5c4100;
     --color-error: #882018;
     --color-info: #0d4f6b;
 
-    --color-selection-bg: #c7e3d9;
+    --color-selection-bg: #f1c5c4;
     --color-selection-text: #101310;
     --color-scrim: rgba(16, 19, 16, 0.58);
     --color-material: #fafbfa;
@@ -219,16 +226,16 @@
     --color-accent-soft: rgba(255, 162, 156, 0.20);
     --color-on-accent: #111411;
 
-    --color-link: #8cebdc;
-    --color-link-hover: #b2f4e8;
-    --color-focus: #8cebdc;
+    --color-link: #ff9a92;
+    --color-link-hover: #ffb5b0;
+    --color-focus: #ff9a92;
 
     --color-success: #67e39d;
     --color-warning: #ffd08a;
     --color-error: #ffa29c;
     --color-info: #8cddff;
 
-    --color-selection-bg: #376c60;
+    --color-selection-bg: #742c29;
     --color-selection-text: #f0f3f0;
     --color-scrim: rgba(5, 8, 5, 0.72);
     --color-material: #1a1f1a;
@@ -246,6 +253,9 @@
 
 @media (forced-colors: active) {
   :root {
+    --color-brand-red: CanvasText;
+    --color-brand-ink: CanvasText;
+    --color-brand-white: CanvasText;
     --color-bg: Canvas;
     --color-surface-subtle: Canvas;
     --color-surface: Canvas;

@@ -3,14 +3,15 @@
 ## Contents
 
 1. [Shared geometry](#shared-geometry)
-2. [Header](#header)
-3. [First viewport](#first-viewport)
-4. [Sections and repeated rows](#sections-and-repeated-rows)
-5. [Cards and surfaces](#cards-and-surfaces)
-6. [Controls](#controls)
-7. [Product media and data](#product-media-and-data)
-8. [Responsive behavior](#responsive-behavior)
-9. [Footer](#footer)
+2. [Relux Works identity assets](#relux-works-identity-assets)
+3. [Header](#header)
+4. [First viewport](#first-viewport)
+5. [Sections and repeated rows](#sections-and-repeated-rows)
+6. [Cards and surfaces](#cards-and-surfaces)
+7. [Controls](#controls)
+8. [Product media and data](#product-media-and-data)
+9. [Responsive behavior](#responsive-behavior)
+10. [Footer](#footer)
 
 ## Shared geometry
 
@@ -36,6 +37,37 @@ deviate:
   or dialog.
 - Never use `overflow-x: hidden` to conceal a broken grid.
 
+## Relux Works identity assets
+
+Use the supplied production SVGs without redrawing their geometry:
+
+- `assets/relux-symbol.svg` and `assets/relux-symbol-dark.svg` for compact identity and
+  light/dark browser icons.
+- `assets/relux-lockup-horizontal.svg` and `assets/relux-lockup-horizontal-dark.svg`
+  for shared site chrome.
+- `assets/relux-symbol-one-color.svg` and
+  `assets/relux-lockup-horizontal-one-color.svg` for monochrome and forced colors.
+- `assets/relux-avatar-light.svg` and `assets/relux-avatar-dark.svg` only where an
+  opaque square avatar tile is required.
+
+The symbol uses the normalized `0 0 100 100` viewBox; the horizontal lockup uses
+`0 0 450 100`. Runtime wordmarks use the supplied outlined path, not live SVG text or
+a locally substituted font. Inter Bold 700 is retained only for an editable source.
+Do not stretch, rotate, rearrange, recolor, outline, round, shadow, or close the gap
+between the arrow and chevron.
+
+- Keep clear space of at least one red-arm thickness (`1T`) on every side. Here,
+  `T = 10√2 ≈ 14.14` normalized units, or `14.14%` of the 100-unit SVG viewport.
+- Minimum screen sizes are 16px for the symbol and 160px for the horizontal lockup.
+  At 24px and below use the symbol as the favicon treatment; no micro redraw is needed.
+- Use red plus ink on white or a quiet light neutral. Use red plus knockout white on
+  Relux ink or another approved solid dark surface. Avoid busy or low-contrast media.
+- Keep the artwork LTR-isolated with `direction: ltr` and `unicode-bidi: isolate`.
+  Logical page layout may mirror in RTL; the chevron, arrow, and wordmark never do.
+- Give a linked mark the accessible name `Relux Works`; hide the nested SVG. For an
+  informative `<img>`, use the alt text `Relux Works`. Add instance-level ARIA only
+  when an informative SVG is inline; bundled sources are deliberately metadata-free.
+
 ## Header
 
 The family header uses three stable zones: brand at the inline start, navigation on
@@ -58,6 +90,9 @@ Equal wing tracks keep navigation centered independently of label width. If the
 product requires different wings, verify the navigation center mathematically at all
 desktop widths instead of centering the middle track by assumption.
 
+- Use the outlined horizontal lockup at approximately 168px wide in the standard
+  header, never below its 160px minimum. Use the symbol alone only when available
+  width cannot support the lockup and preserve the accessible brand name.
 - Keep the header height stable across routes, locales, and active states.
 - Use a translucent material only when content scrolls under the header. Otherwise a
   solid semantic surface is clearer.

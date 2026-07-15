@@ -1,17 +1,17 @@
 {
   "locales": {
     "en": {
-      "description": "Design, build, migrate, or review Relux Works product websites using the shared family system for typography, semantic color tokens, responsive layout, themes, navigation, motion, WCAG 2.2 AA accessibility, RTL, factual content, discovery, and visual QA.",
+      "description": "Design, build, migrate, or review Relux Works product websites using the approved logo and shared family system for typography, semantic color tokens, responsive layout, themes, navigation, motion, WCAG 2.2 AA accessibility, RTL, factual content, discovery, and visual QA.",
       "display_name": "Relux Product Web Design",
       "short_description": "Design and review consistent Relux Works product websites",
-      "default_prompt": "Use $relux-product-web-design to design, implement, migrate, or review this product website using the Relux Works family system, including typography, semantic themes, responsive geometry, motion, WCAG 2.2 AA accessibility, RTL, evidence-led content, and visual QA.",
+      "default_prompt": "Use $relux-product-web-design to apply the approved Relux Works logo and product-family identity to this website, including accessible themes, responsive geometry, RTL, evidence-led content, and visual QA.",
       "local_prefix": "[local] "
     },
     "ru": {
-      "description": "Проектирование, разработка, перенос и проверка сайтов продуктов Relux Works по единой системе: типографика, семантические цветовые токены, адаптивная сетка, темы, навигация, движение, доступность по WCAG 2.2 AA, RTL, профессиональный текст, обнаружимость и визуальная проверка.",
+      "description": "Проектирование, разработка, перенос и проверка сайтов продуктов Relux Works с утвержденным логотипом и по единой системе: типографика, семантические цветовые токены, адаптивная сетка, темы, навигация, движение, доступность по WCAG 2.2 AA, RTL, профессиональный текст, обнаружимость и визуальная проверка.",
       "display_name": "Дизайн сайтов продуктов Relux Works",
       "short_description": "Единый дизайн и проверка сайтов продуктов Relux Works",
-      "default_prompt": "Используй $relux-product-web-design, чтобы спроектировать, реализовать, привести к общему стилю или проверить сайт продукта по системе Relux Works: типографика, семантические темы, адаптивная сетка, движение, доступность по WCAG 2.2 AA, RTL, доказательный текст и визуальная проверка.",
+      "default_prompt": "Используй $relux-product-web-design, чтобы применить к сайту утвержденный логотип и фирменную систему Relux Works: доступные темы, адаптивную сетку, RTL, доказательный текст и визуальную проверку.",
       "local_prefix": "[локально] "
     }
   }
